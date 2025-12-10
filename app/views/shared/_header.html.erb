@@ -1,0 +1,54 @@
+<header class="bg-black shadow-sm border-b-2" style="border-bottom-color: var(--color-primary-800);">
+  <nav class="section-container">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo/Name -->
+      <div class="flex-shrink-0">
+        <%= link_to root_path, class: "flex items-center" do %>
+          <span class="text-2xl font-bold" style="color: #e5e7eb;">Beckett Dunlavy</span>
+        <% end %>
+      </div>
+
+      <!-- Navigation Links (Desktop) -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+          <%= link_to "Home", root_path, class: nav_link_class('home') %>
+          <%= link_to "Resume", resume_path, class: nav_link_class('resume') %>
+          <%= link_to "Courses", courses_path, class: nav_link_class('courses') %>
+          <%= link_to "Projects", projects_path, class: nav_link_class('projects') %>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button type="button" class="text-gray-300 focus:outline-none" style="color: #9ca3af;" id="mobile-menu-button" aria-label="Toggle mobile menu">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="hidden md:hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <%= link_to "Home", root_path, class: "#{nav_link_class('home')} block" %>
+        <%= link_to "Resume", resume_path, class: "#{nav_link_class('resume')} block" %>
+        <%= link_to "Courses", courses_path, class: "#{nav_link_class('courses')} block" %>
+        <%= link_to "Projects", projects_path, class: "#{nav_link_class('projects')} block" %>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  });
+</script>

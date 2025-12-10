@@ -1,0 +1,38 @@
+<div class="section-container">
+  <h1 class="page-title">Courses</h1>
+
+  <div class="max-w-4xl mx-auto">
+    <p class="text-lg mb-8" style="color: #9ca3af;">
+      A selection of relevant coursework focused on computer science, high performance computing,
+      and software engineering.
+    </p>
+
+    <div class="space-y-6">
+      <% @courses.each do |course| %>
+        <div class="card hover:shadow-lg transition-shadow duration-200">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+            <div>
+              <h2 class="text-2xl font-bold">
+                <span style="color: #9ca3af;"><%= course[:code] %></span> <span style="color: #e5e7eb;">- <%= course[:name] %></span>
+              </h2>
+              <p class="mt-1" style="color: #9ca3af;"><%= course[:semester] %></p>
+            </div>
+          </div>
+
+          <% if course[:topics].present? %>
+            <div class="mt-4">
+              <h3 class="font-semibold mb-2" style="color: #e5e7eb;">Key Topics:</h3>
+              <div class="flex flex-wrap gap-2">
+                <% course[:topics].each do |topic| %>
+                  <span class="px-3 py-1 rounded-md text-sm" style="background-color: var(--color-primary-900); color: #9ca3af;">
+                    <%= topic %>
+                  </span>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
