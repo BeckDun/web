@@ -1,69 +1,204 @@
+<!-- Hero Section with Carousel and Student Intro -->
 <div class="bg-black">
   <div class="section-container py-16">
-    <div class="max-w-3xl">
-      <h1 class="text-5xl font-bold mb-4" style="color: #e5e7eb;">
-        Hi, I'm <span style="color: #9ca3af;">Your Name</span>
-      </h1>
-      <p class="text-xl mb-6 leading-relaxed" style="color: #9ca3af;">
-        I'm passionate about <strong style="color: #e5e7eb;">High Performance Computing</strong>
-        and leveraging parallel computing architectures to solve complex computational problems.
-      </p>
-      <div class="flex gap-4">
-        <%= link_to "View Resume", resume_path, class: "btn-primary" %>
-        <%= link_to "See Projects", projects_path, class: "px-6 py-3 rounded-lg font-medium border-2 transition-colors duration-200", style: "color: #9ca3af; border-color: var(--color-primary-800); background-color: transparent;", onmouseover: "this.style.backgroundColor='#0a0e14'; this.style.color='#e5e7eb'", onmouseout: "this.style.backgroundColor='transparent'; this.style.color='#9ca3af'" %>
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+
+      <!-- LEFT: Image Carousel -->
+      <div class="carousel-container">
+        <div class="swiper heroSwiper">
+          <div class="swiper-wrapper">
+            <% @carousel_images.each do |item| %>
+              <div class="swiper-slide">
+                <div class="carousel-image-wrapper">
+                  <% if item[:type] == 'video' %>
+                    <video class="carousel-video"
+                           controls
+                           muted
+                           loop
+                           playsinline
+                           alt="<%= item[:alt] %>">
+                      <source src="<%= item[:url] %>" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  <% else %>
+                    <img src="<%= item[:url] %>"
+                         alt="<%= item[:alt] %>"
+                         class="carousel-image">
+                  <% end %>
+                  <% if item[:caption] %>
+                    <div class="carousel-caption">
+                      <%= item[:caption] %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
       </div>
+
+      <!-- RIGHT: Student Intro and Social Links -->
+      <div class="student-intro-section">
+        <h1 class="text-4xl md:text-5xl font-bold mb-3" style="color: #e5e7eb;">
+          Hi, I'm <span style="color: #9ca3af;"><%= @student_intro[:name] %></span>
+        </h1>
+        <p class="text-xl mb-2" style="color: #9ca3af;">
+          <%= @student_intro[:title] %>
+        </p>
+        <p class="text-lg mb-4" style="color: #9ca3af;">
+          <%= @student_intro[:university] %>
+        </p>
+        <p class="text-base mb-6 leading-relaxed" style="color: #9ca3af;">
+          <%= @student_intro[:bio] %>
+        </p>
+
+        <!-- Social Links - Icon Only (like footer) -->
+        <div class="flex gap-6 mb-6">
+          <% @social_links.each do |link| %>
+            <a href="<%= link[:url] %>"
+               target="<%= link[:platform] == 'Email' ? '_self' : '_blank' %>"
+               rel="<%= link[:platform] == 'Email' ? '' : 'noopener noreferrer' %>"
+               class="social-icon-link"
+               aria-label="<%= link[:platform] %>">
+              <i class="fab <%= link[:icon] %> text-3xl"></i>
+            </a>
+          <% end %>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex gap-4 mt-6">
+          <%= link_to resume_path, class: "btn-primary" do %>
+            <i class="fas fa-file-pdf mr-2"></i>Resume
+          <% end %>
+          <%= link_to projects_path, class: "btn-primary" do %>
+            <i class="fas fa-code mr-2"></i>Projects
+          <% end %>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
 
-<!-- About Section -->
-<div class="section-container">
-  <div class="card max-w-4xl mx-auto">
-    <h2 class="text-2xl font-bold mb-4" style="color: #e5e7eb;">About Me</h2>
-    <div class="prose max-w-none">
-      <p class="mb-4" style="color: #9ca3af;">
-        I'm a computer science enthusiast with a deep interest in high-performance computing,
-        parallel algorithms, and computational efficiency. My work focuses on optimizing
-        performance-critical applications and exploring the boundaries of what's possible
-        with modern computing architectures.
-      </p>
-      <p style="color: #9ca3af;">
-        I'm particularly interested in distributed systems, GPU computing, and the intersection
-        of hardware and software optimization in HPC environments.
-      </p>
-    </div>
-  </div>
-</div>
-
-<!-- Events Section -->
+<!-- Events Section with Photo Carousels -->
 <div class="section-container">
   <h2 class="page-title">Events</h2>
 
-  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-    <% @events.each do |event| %>
-      <div class="card hover:shadow-lg transition-shadow duration-200">
+  <% @events.each_with_index do |event, index| %>
+    <div class="event-gallery-section mb-16">
+      <!-- Event Header Card -->
+      <div class="card mb-6">
         <div class="flex items-start justify-between mb-3">
-          <h3 class="text-xl font-bold" style="color: #e5e7eb;"><%= event[:name] %></h3>
-          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium" style="background-color: var(--color-primary-900); color: #9ca3af;">
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold mb-2" style="color: #e5e7eb;"><%= event[:name] %></h3>
+            <p class="text-sm mb-2 font-medium" style="color: #9ca3af;"><%= event[:full_name] %></p>
+            <p class="mb-3" style="color: #9ca3af;"><%= event[:description] %></p>
+          </div>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ml-4" style="background-color: var(--color-primary-900); color: #9ca3af;">
             <%= event[:date] %>
           </span>
         </div>
-
-        <p class="text-sm mb-2 font-medium" style="color: #9ca3af;"><%= event[:full_name] %></p>
-        <p class="mb-3" style="color: #9ca3af;"><%= event[:description] %></p>
-
-        <div class="text-sm mb-3" style="color: #9ca3af;">
-          <svg class="inline-block w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-          <%= event[:location] %>
+        <div class="flex items-center justify-between">
+          <div class="text-sm" style="color: #9ca3af;">
+            <svg class="inline-block w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <%= event[:location] %>
+          </div>
+          <% if event[:url] %>
+            <%= link_to event[:url], target: "_blank", class: "font-medium text-sm", style: "color: #9ca3af;", onmouseover: "this.style.color='#e5e7eb'", onmouseout: "this.style.color='#9ca3af'" do %>
+              Learn More →
+            <% end %>
+          <% end %>
         </div>
-
-        <% if event[:url] %>
-          <%= link_to "Learn More →", event[:url], target: "_blank", class: "font-medium text-sm", style: "color: #9ca3af;", onmouseover: "this.style.color='#e5e7eb'", onmouseout: "this.style.color='#9ca3af'" %>
-        <% end %>
       </div>
-    <% end %>
-  </div>
+
+      <!-- Bootstrap Carousel for Event Photos (NO CAPTIONS) -->
+      <% if event[:photos].present? %>
+        <div id="eventCarousel<%= index %>" class="carousel slide event-carousel" data-bs-ride="carousel">
+          <!-- Indicators -->
+          <div class="carousel-indicators">
+            <% event[:photos].each_with_index do |photo, photo_index| %>
+              <button type="button"
+                      data-bs-target="#eventCarousel<%= index %>"
+                      data-bs-slide-to="<%= photo_index %>"
+                      class="<%= 'active' if photo_index == 0 %>"
+                      aria-current="<%= 'true' if photo_index == 0 %>"
+                      aria-label="Slide <%= photo_index + 1 %>"></button>
+            <% end %>
+          </div>
+
+          <!-- Carousel Items -->
+          <div class="carousel-inner">
+            <% event[:photos].each_with_index do |photo, photo_index| %>
+              <div class="carousel-item <%= 'active' if photo_index == 0 %>">
+                <img src="<%= photo[:url] %>"
+                     class="d-block w-100 event-carousel-image"
+                     alt="<%= photo[:alt] %>"
+                     onerror="this.src='/images/photo1.jpg'">
+              </div>
+            <% end %>
+          </div>
+
+          <!-- Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel<%= index %>" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel<%= index %>" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
+
+<!-- Swiper Initialization Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const swiper = new Swiper('.heroSwiper', {
+      loop: true,
+      autoplay: {
+        delay: 10000, // 10 seconds like Ryan's profile carousel
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      speed: 800,
+      on: {
+        slideChange: function() {
+          // Pause videos when not active
+          const videos = document.querySelectorAll('.heroSwiper video');
+          videos.forEach(video => {
+            video.pause();
+          });
+
+          // Play video in active slide
+          const activeSlide = this.slides[this.activeIndex];
+          const activeVideo = activeSlide.querySelector('video');
+          if (activeVideo) {
+            activeVideo.play();
+          }
+        }
+      }
+    });
+  });
+</script>

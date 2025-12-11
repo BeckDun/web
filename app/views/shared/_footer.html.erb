@@ -1,15 +1,38 @@
 <footer class="bg-black text-white mt-auto border-t-2" style="border-top-color: var(--color-primary-800);">
   <div class="section-container">
     <div class="py-6">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="container">
-          <a href="https://github.com/BeckDun" target="_blank" class="text-gray-400 transition-colors" style="color: #9ca3af;" onmouseover="this.style.color='#e5e7eb'" onmouseout="this.style.color='#9ca3af'">
-            GitHub
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+
+        <!-- Social Icons -->
+        <div class="flex gap-6">
+          <a href="https://github.com/BeckDun"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="footer-icon-link"
+             aria-label="GitHub">
+            <i class="fab fa-github text-2xl"></i>
           </a>
-          <a href="https://www.linkedin.com/in/beckettd/" target="_blank" class="text-gray-400 transition-colors" style="color: #9ca3af;" onmouseover="this.style.color='#e5e7eb'" onmouseout="this.style.color='#9ca3af'">
-            LinkedIn
+
+          <a href="https://www.linkedin.com/in/beckettd/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="footer-icon-link"
+             aria-label="LinkedIn">
+            <i class="fab fa-linkedin text-2xl"></i>
+          </a>
+
+          <a href="mailto:beckett.dunlavy@gmail.com"
+             class="footer-icon-link"
+             aria-label="Email">
+            <i class="fas fa-envelope text-2xl"></i>
           </a>
         </div>
+
+        <!-- Copyright -->
+        <div class="text-sm" style="color: #9ca3af;">
+          &copy; <%= Time.current.year %> Beckett Dunlavy. All rights reserved.
+        </div>
+
       </div>
     </div>
   </div>
