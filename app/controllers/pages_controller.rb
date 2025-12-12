@@ -19,7 +19,6 @@ class PagesController < ApplicationController
       }
     ]
 
-    # Student intro for right side
     @student_intro = {
       name: "Beckett Dunlavy",
       title: "Computer Science Student",
@@ -66,21 +65,7 @@ class PagesController < ApplicationController
           { url: "/images/sc25_photo4.jpg", alt: "SC25 Competition Photo 4" },
           { url: "/images/sc25_photo5.jpg", alt: "SC25 Competition Photo 5" }
         ]
-      },
-      {
-        name: "PEARC 24",
-        full_name: "Practice and Experience in Advanced Research Computing",
-        date: "July 2024",
-        location: "Providence, RI",
-        description: "Attended workshops and presentations on advanced research computing",
-        url: "https://pearc.acm.org/pearc24/",
-        photos: [
-          { url: "/images/pearc24_photo1.jpg", alt: "PEARC24 Conference Photo 1" },
-          { url: "/images/pearc24_photo2.jpg", alt: "PEARC24 Conference Photo 2" },
-          { url: "/images/pearc24_photo3.jpg", alt: "PEARC24 Conference Photo 3" }
-        ]
-      }
-      # Add more events as needed
+      }    
     ]
   end
 
@@ -226,20 +211,12 @@ class PagesController < ApplicationController
     # Projects showcase
     @projects = [
       {
-        title: "HPC Cluster Monitoring Dashboard",
-        description: "Real-time monitoring dashboard for tracking HPC cluster performance and resource utilization",
-        technologies: ["Python", "Flask", "Grafana", "Prometheus"],
-        github_url: "https://github.com/yourusername/hpc-dashboard",
-        date: "2024"
-      },
-      {
-        title: "Parallel Matrix Multiplication",
-        description: "Implementation of parallel matrix multiplication using MPI and CUDA",
-        technologies: ["C++", "MPI", "CUDA"],
-        github_url: "https://github.com/yourusername/parallel-matrix",
-        date: "2024"
+        title: "Hybrid CPU-GPU approach to PCG-AMG",
+        description: "This project investigates a hybrid CPU-GPU execution strategy for PCG-AMG within hypre",
+        technologies: ["MPI", "C++", "Slurm", "OpenMP"],
+        github_url: "https://github.com/beckdun/hypre_testing",
+        date: "2025"
       }
-      # Add more projects as needed
     ]
   end
 

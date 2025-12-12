@@ -3,56 +3,63 @@
   <div class="section-container py-16">
     <div class="grid md:grid-cols-2 gap-8 items-center">
 
-      <!-- LEFT: Image Carousel -->
+      <!-- LEFT: Image Carousel (Bootstrap Style) -->
       <div class="carousel-container">
-        <div class="swiper heroSwiper">
-          <div class="swiper-wrapper">
-            <% @carousel_images.each do |item| %>
-              <div class="swiper-slide">
-                <div class="carousel-image-wrapper">
-                  <% if item[:type] == 'video' %>
-                    <video class="carousel-video"
-                           controls
-                           muted
-                           loop
-                           playsinline
-                           alt="<%= item[:alt] %>">
-                      <source src="<%= item[:url] %>" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
-                  <% else %>
-                    <img src="<%= item[:url] %>"
-                         alt="<%= item[:alt] %>"
-                         class="carousel-image">
-                  <% end %>
-                  <% if item[:caption] %>
-                    <div class="carousel-caption">
-                      <%= item[:caption] %>
-                    </div>
-                  <% end %>
-                </div>
+        <div id="heroCarousel" class="carousel slide event-carousel" data-bs-ride="carousel">
+          <!-- Indicators -->
+          <div class="carousel-indicators">
+            <% @carousel_images.each_with_index do |item, index| %>
+              <button type="button"
+                      data-bs-target="#heroCarousel"
+                      data-bs-slide-to="<%= index %>"
+                      class="<%= 'active' if index == 0 %>"
+                      aria-current="<%= 'true' if index == 0 %>"
+                      aria-label="Slide <%= index + 1 %>"></button>
+            <% end %>
+          </div>
+
+          <!-- Carousel Items -->
+          <div class="carousel-inner">
+            <% @carousel_images.each_with_index do |item, index| %>
+              <div class="carousel-item <%= 'active' if index == 0 %>">
+                <% if item[:type] == 'video' %>
+                  <video class="d-block w-100 event-carousel-image"
+                         controls
+                         muted
+                         loop
+                         playsinline
+                         alt="<%= item[:alt] %>">
+                    <source src="<%= item[:url] %>" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                <% else %>
+                  <img src="<%= item[:url] %>"
+                       class="d-block w-100 event-carousel-image"
+                       alt="<%= item[:alt] %>">
+                <% end %>
               </div>
             <% end %>
           </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+
+          <!-- Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
 
-      <!-- RIGHT: Student Intro and Social Links -->
+      <!-- RIGHT: Job Titles and Social Links -->
       <div class="student-intro-section">
-        <h1 class="text-4xl md:text-5xl font-bold mb-3" style="color: #e5e7eb;">
-          Hi, I'm <span style="color: #9ca3af;"><%= @student_intro[:name] %></span>
-        </h1>
         <p class="text-xl mb-2" style="color: #9ca3af;">
-          <%= @student_intro[:title] %>
+          Research Assistant at UNM
         </p>
-        <p class="text-lg mb-4" style="color: #9ca3af;">
-          <%= @student_intro[:university] %>
-        </p>
-        <p class="text-base mb-6 leading-relaxed" style="color: #9ca3af;">
-          <%= @student_intro[:bio] %>
+        <p class="text-xl mb-6" style="color: #9ca3af;">
+          HPC User Support at CARC
         </p>
 
         <!-- Social Links - Icon Only (like footer) -->
@@ -63,7 +70,7 @@
                rel="<%= link[:platform] == 'Email' ? '' : 'noopener noreferrer' %>"
                class="social-icon-link"
                aria-label="<%= link[:platform] %>">
-              <i class="fab <%= link[:icon] %> text-3xl"></i>
+              <i class="<%= link[:platform] == 'Email' ? 'fas' : 'fab' %> <%= link[:icon] %> text-4xl"></i>
             </a>
           <% end %>
         </div>
@@ -159,46 +166,3 @@
   <% end %>
 </div>
 
-<!-- Swiper Initialization Script -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const swiper = new Swiper('.heroSwiper', {
-      loop: true,
-      autoplay: {
-        delay: 10000, // 10 seconds like Ryan's profile carousel
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: false,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-      speed: 800,
-      on: {
-        slideChange: function() {
-          // Pause videos when not active
-          const videos = document.querySelectorAll('.heroSwiper video');
-          videos.forEach(video => {
-            video.pause();
-          });
-
-          // Play video in active slide
-          const activeSlide = this.slides[this.activeIndex];
-          const activeVideo = activeSlide.querySelector('video');
-          if (activeVideo) {
-            activeVideo.play();
-          }
-        }
-      }
-    });
-  });
-</script>

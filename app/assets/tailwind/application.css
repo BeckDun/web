@@ -46,6 +46,7 @@ body {
   font-weight: 500;
   transition-property: color, background-color, border-color;
   transition-duration: 200ms;
+  text-decoration: none;
 }
 
 .nav-link-active {
@@ -259,7 +260,7 @@ body {
 
 /* Social Icon Links - Icon Only Style */
 .social-icon-link {
-  color: #9ca3af;
+  color: #ffffff;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -269,10 +270,11 @@ body {
   border-radius: 50%;
   background-color: rgba(17, 24, 39, 0.5);
   border: 2px solid transparent;
+  text-decoration: none;
 }
 
 .social-icon-link:hover {
-  color: #e5e7eb;
+  color: #ffffff;
   background-color: rgba(17, 24, 39, 0.9);
   border-color: var(--color-primary-800);
   transform: translateY(-4px) scale(1.1);
@@ -419,7 +421,7 @@ body {
    ======================================== */
 
 .footer-icon-link {
-  color: #9ca3af;
+  color: #ffffff;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -431,7 +433,7 @@ body {
 }
 
 .footer-icon-link:hover {
-  color: #e5e7eb;
+  color: #ffffff;
   background-color: #0a0e14;
   transform: translateY(-2px);
 }
