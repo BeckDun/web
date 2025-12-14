@@ -11,7 +11,7 @@ jobs:
     env:
       RAILS_ENV: production
       # We don't need the master key here, just for the running server
-
+      RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
