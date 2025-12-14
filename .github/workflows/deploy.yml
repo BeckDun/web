@@ -1,0 +1,46 @@
+name: Deploy to Omarchy
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    # Set the environment variables your Rails app needs during build
+    env:
+      RAILS_ENV: production
+      # We don't need the master key here, just for the running server
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Ruby Gems
+        run: |
+          bundle config set --local deployment 'true'
+          bundle config set --local without 'development test'
+          bundle install --jobs 4 --retry 3
+
+      - name: Database Migrations
+        # If this fails on first run, it might be because the DB doesn't exist.
+        # You might need to run 'rails db:setup' manually on the server once.
+        run: bundle exec rails db:migrate
+
+      - name: Precompile Assets
+        run: bundle exec rails assets:precompile
+
+      - name: Restart Server
+        # This logic tries a "Zero Downtime" restart first.
+        # If the server is OFF (like right now), it tells you to start it manually.
+        run: |
+          if [ -f tmp/pids/server.pid ]; then
+            echo "Server is running. Attempting Phased Restart..."
+            bundle exec pumactl -P tmp/pids/server.pid phased-restart
+          else
+            echo "Server is NOT running (or PID missing)."
+            echo "If this is your first deploy, please log into the server and run:"
+            echo "sudo systemctl start beckett-rails"
+            # We exit successfully so the action doesn't look 'red' just because it's the first run
+            exit 0
+          fi
