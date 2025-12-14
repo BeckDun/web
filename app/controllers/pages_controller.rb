@@ -73,35 +73,47 @@ class PagesController < ApplicationController
     # Experience section (most recent first)
     @experience = [
       {
-        title: "HPC Research Assistant",
-        organization: "University Computing Center",
-        logo: "/images/unm_logo.png", # Add your UNM logo here
+        title: "Research Assistant",
+        organization: "UNM Department of Computer Science",
+        logo: "/images/unm_logo.png",
         logo_url: "https://www.unm.edu",
         location: "Albuquerque, NM",
-        start_date: "January 2024",
+        start_date: "May 2025",
         end_date: "Present",
         current: true,
         responsibilities: [
-          "Optimized parallel algorithms for distributed memory systems using MPI",
-          "Developed CUDA kernels for GPU-accelerated scientific computing applications",
-          "Benchmarked and profiled HPC applications to identify performance bottlenecks",
-          "Collaborated with research teams on computational physics simulations"
+          "Benchmarked the Hypre algebraic multigrid (AMG) linear solver on the DeltaAI HPC cluster at UIUC",
+          "Extended existing C++ software to optimally leverage CPU and NVIDIA GH200 GPUs in AMG linear solvers"
         ]
       },
       {
-        title: "HPC User Support Specialist",
-        organization: "Center for Advanced Research Computing (CARC)",
-        logo: "/images/carc_logo.png", # Add your CARC logo here
-        logo_url: "https://carc.unm.edu",
+        title: "Faculty Assistant / Tutor",
+        organization: "UNM Department of Computer Science",
+        logo: "/images/unm_logo.png",
+        logo_url: "https://www.unm.edu",
         location: "Albuquerque, NM",
-        start_date: "August 2023",
-        end_date: "December 2023",
+        start_date: "May 2024",
+        end_date: "May 2025",
         current: false,
         responsibilities: [
-          "Provided technical support to researchers using HPC cluster resources",
-          "Assisted users with job scheduling, optimization, and debugging",
-          "Created documentation and tutorials for common HPC workflows",
-          "Conducted training sessions on parallel programming techniques"
+          "Created a curriculum to teach Git/GitLab to incoming and enrolled CS students",
+          "Produced educational YouTube videos teaching the curriculum",
+          "Tutored undergraduate computer science students in a variety of classes"
+        ]
+      },
+      {
+        title: "Teaching Assistant",
+        organization: "UNM Department of Computer Science",
+        logo: "/images/unm_logo.png",
+        logo_url: "https://www.unm.edu",
+        location: "Albuquerque, NM",
+        start_date: "Jan. 2024",
+        end_date: "May 2024",
+        current: false,
+        responsibilities: [
+          "Assisted in teaching duties for Intermediate Programming (CS 251) section with 18 students",
+          "Led weekly lab sessions, helped students with content understanding, graded homework",
+          "Hosted weekly office hours, helping students 1-on-1 with homework and programming assignments"
         ]
       }
     ]
@@ -109,52 +121,70 @@ class PagesController < ApplicationController
     # Education section
     @education = [
       {
-        degree: "Bachelor of Science in Computer Science",
+        degree: "Major: Computer Science (Engineering) | Minor: German Language",
         institution: "University of New Mexico",
         location: "Albuquerque, NM",
-        graduation: "Expected May 2026",
-        gpa: "3.8/4.0",
-        honors: ["Dean's List (Fall 2023, Spring 2024)", "HPC Research Fellowship"],
-        focus: "High Performance Computing and Parallel Systems",
+        graduation: "Aug. 2022 – Present",
+        gpa: "4.14/4.0",
+        honors: [
+          "Dean's List (5 semesters)",
+          "Woodward Scholarship (4 years)"
+        ],
+        focus: nil,
         relevant_coursework: [
           "High Performance Computing",
-          "Parallel and Distributed Systems",
-          "Computer Architecture",
-          "Advanced Algorithms"
+          "Parallel Processing",
+          "Numerical Computing",
+          "Linear Algebra",
+          "Algorithms 1",
+          "Design of Large Programs",
+          "Computer Logic and Design",
+          "Mathematical Statistics",
+          "Calculus I/II"
         ]
+      },
+      {
+        degree: "European Studies Program, Intensive German Language Program (B2/C1)",
+        institution: "Freie University",
+        location: "Berlin, Germany",
+        graduation: "Aug. 2024 – Dec. 2024",
+        gpa: nil,
+        honors: [],
+        focus: nil,
+        relevant_coursework: []
+      },
+      {
+        degree: "Google Cybersecurity Professional Certificate",
+        institution: "Coursera Online",
+        location: "Online",
+        graduation: "June 2024",
+        gpa: nil,
+        honors: [],
+        focus: "8-course cybersecurity certification program",
+        relevant_coursework: []
       }
     ]
 
     # Skills section (organized by category)
     @skills = {
-      programming_languages: ["C++", "Python", "C", "Fortran", "Java", "Bash"],
-      hpc_technologies: ["MPI", "CUDA", "OpenMP", "OpenACC", "Slurm", "PBS"],
-      tools_platforms: ["Linux", "Git", "Docker", "CMake", "Valgrind", "GDB"],
-      performance_analysis: ["Intel VTune", "NVIDIA Nsight", "TAU", "Scalasca"],
-      other: ["Performance Profiling", "Parallel Algorithms", "Scientific Computing", "Cluster Management"]
+      programming_languages: ["Java", "C/C++", "Python", "Jupyter Notebooks", "MATLAB", "Bash", "Claude Code", "Codex", "Github Copilot"],
+      hpc_technologies: ["HPL", "STREAM", "JetStream2", "CARC", "DeltaAI", "MPI", "slurm", "spack"],
+      tools_platforms: ["Git/GitHub", "LaTeX/Overleaf", "Linux", "MacOS", "Windows", "Microsoft Office Suite", "Google Workspace"],
+      performance_analysis: [],
+      other: []
     }
 
     # Events & Activities section
     @resume_events = [
       {
-        name: "SC25 Student Cluster Competition",
-        full_name: "International Conference for High Performance Computing, Networking, Storage and Analysis",
+        name: "Student Cluster Competition",
+        full_name: "HPC, Linux, C++",
         role: "Team Member",
-        date: "November 2025",
-        location: "St. Louis, MO",
-        description: "Competed in the prestigious Student Cluster Competition, designing and building a high-performance computing cluster. Optimized applications and benchmarked system performance against teams from around the world.",
-        url: "https://sc25.supercomputing.org",
-        logo: "/images/sc25_logo.png"
-      },
-      {
-        name: "PEARC24 Conference",
-        full_name: "Practice and Experience in Advanced Research Computing",
-        role: "Attendee",
-        date: "July 2024",
-        location: "Providence, RI",
-        description: "Attended workshops and presentations on advanced research computing topics, networking with HPC professionals and researchers.",
-        url: "https://pearc.acm.org/pearc24/",
-        logo: "/images/pearc_logo.png"
+        date: "Jul. 2025 – Present",
+        location: "Various",
+        description: "Collaborated with teammates to optimize applications on VMs ran on the Jetstream2 cloud system. Built and ran climate applications across multiple nodes using slurm.",
+        url: nil,
+        logo: nil
       }
     ]
   end

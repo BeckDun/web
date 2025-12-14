@@ -289,6 +289,29 @@ body {
   transform: scale(1.15);
 }
 
+/* Bio Social Icon Links - White icons without blue */
+.bio-social-icon-link {
+  color: #ffffff;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.bio-social-icon-link:hover {
+  color: #e5e7eb;
+  transform: translateY(-2px) scale(1.1);
+}
+
+.bio-social-icon-link i {
+  transition: transform 0.3s ease;
+}
+
+.bio-social-icon-link:hover i {
+  transform: scale(1.15);
+}
+
 /* Secondary Button */
 .btn-secondary {
   padding-left: 1.5rem;
@@ -502,14 +525,14 @@ body {
   padding: 0.5rem 0.875rem;
   border-radius: 0.375rem;
   background-color: var(--color-primary-900);
-  color: #9ca3af;
+  color: #ffffff !important;
   font-size: 0.875rem;
   transition: all 0.2s ease;
 }
 
 .topic-tag:hover {
   background-color: var(--color-primary-800);
-  color: #e5e7eb;
+  color: #ffffff !important;
   transform: translateY(-1px);
 }
 
@@ -553,7 +576,7 @@ body {
 .section-divider {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #e5e7eb;
+  color: #ffffff !important;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom: 4px solid var(--color-primary-800);
@@ -564,7 +587,7 @@ body {
 }
 
 .section-divider i {
-  color: #9ca3af;
+  color: #ffffff !important;
   font-size: 2rem;
 }
 
@@ -576,8 +599,8 @@ body {
 }
 
 .company-logo {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 50px;
+  max-height: 50px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -620,7 +643,7 @@ body {
   align-items: center;
   padding: 0.375rem 0.875rem;
   background-color: var(--color-primary-900);
-  color: #9ca3af;
+  color: #ffffff !important;
   border-radius: 0.375rem;
   font-size: 0.875rem;
   font-weight: 500;
@@ -631,9 +654,34 @@ body {
   align-items: center;
   padding: 0.375rem 0.875rem;
   background: linear-gradient(135deg, var(--color-primary-800), var(--color-primary-900));
-  color: #e5e7eb;
+  color: #ffffff !important;
   border-radius: 0.375rem;
   font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.875rem;
+  background-color: var(--color-primary-900);
+  color: #ffffff !important;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.skill-badge:hover {
+  background-color: var(--color-primary-800);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.skill-badge.hpc-skill {
+  background: linear-gradient(135deg, var(--color-primary-800), var(--color-primary-900));
+  color: #ffffff !important;
   font-weight: 600;
 }
 
@@ -649,7 +697,7 @@ body {
   position: relative;
   padding-left: 1.75rem;
   margin-bottom: 0.75rem;
-  color: #9ca3af;
+  color: #ffffff !important;
   line-height: 1.6;
 }
 
@@ -657,7 +705,7 @@ body {
   content: "▹";
   position: absolute;
   left: 0;
-  color: #9ca3af;
+  color: #ffffff !important;
   font-size: 1.25rem;
   font-weight: bold;
 }
@@ -676,7 +724,7 @@ body {
   align-items: center;
   padding: 0.375rem 0.875rem;
   background-color: var(--color-primary-900);
-  color: #9ca3af;
+  color: #ffffff !important;
   border-radius: 0.375rem;
   font-size: 0.875rem;
 }
@@ -704,14 +752,14 @@ body {
 .skill-category-title {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #e5e7eb;
+  color: #ffffff !important;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
 }
 
 .skill-category-title i {
-  color: #9ca3af;
+  color: #ffffff !important;
 }
 
 .skill-tags {
@@ -724,7 +772,7 @@ body {
   display: inline-block;
   padding: 0.5rem 0.875rem;
   background-color: var(--color-primary-900);
-  color: #9ca3af;
+  color: #ffffff !important;
   border-radius: 0.375rem;
   font-size: 0.875rem;
   font-weight: 500;
@@ -733,13 +781,13 @@ body {
 
 .skill-tag:hover {
   background-color: var(--color-primary-800);
-  color: #e5e7eb;
+  color: #ffffff !important;
   transform: translateY(-2px);
 }
 
 .skill-tag.hpc-skill {
   background: linear-gradient(135deg, var(--color-primary-800), var(--color-primary-900));
-  color: #e5e7eb;
+  color: #ffffff !important;
   font-weight: 600;
 }
 

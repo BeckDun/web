@@ -51,38 +51,28 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-      </div>
 
-      <!-- RIGHT: Job Titles and Social Links -->
-      <div class="student-intro-section">
-        <p class="text-xl mb-2" style="color: #9ca3af;">
-          Research Assistant at UNM
-        </p>
-        <p class="text-xl mb-6" style="color: #9ca3af;">
-          HPC User Support at CARC
-        </p>
-
-        <!-- Social Links - Icon Only (like footer) -->
-        <div class="flex gap-6 mb-6">
+        <!-- Social Links Below Carousel -->
+        <div class="flex gap-6 mt-4" style="justify-content: center; width: 100%;">
           <% @social_links.each do |link| %>
             <a href="<%= link[:url] %>"
                target="<%= link[:platform] == 'Email' ? '_self' : '_blank' %>"
                rel="<%= link[:platform] == 'Email' ? '' : 'noopener noreferrer' %>"
-               class="social-icon-link"
-               aria-label="<%= link[:platform] %>">
-              <i class="<%= link[:platform] == 'Email' ? 'fas' : 'fab' %> <%= link[:icon] %> text-4xl"></i>
+               class="bio-social-icon-link"
+               aria-label="<%= link[:platform] %>"
+               style="color: #ffffff;">
+              <i class="<%= link[:platform] == 'Email' ? 'fas' : 'fab' %> <%= link[:icon] %> text-4xl" style="color: #ffffff;"></i>
             </a>
           <% end %>
         </div>
+      </div>
 
-        <!-- CTA Buttons -->
-        <div class="flex gap-4 mt-6">
-          <%= link_to resume_path, class: "btn-primary" do %>
-            <i class="fas fa-file-pdf mr-2"></i>Resume
-          <% end %>
-          <%= link_to projects_path, class: "btn-primary" do %>
-            <i class="fas fa-code mr-2"></i>Projects
-          <% end %>
+      <!-- RIGHT: Bio -->
+      <div class="student-intro-section flex items-center justify-center">
+        <div style="text-align: center;">
+          <p class="text-xl mb-4" style="color: #9ca3af;">
+            I'm a Research Assistant at UNM and HPC User Support at CARC. You can view my resume <%= link_to "here", resume_path, style: "color: #ffffff; text-decoration: underline;", onmouseover: "this.style.color='#e5e7eb'", onmouseout: "this.style.color='#ffffff'" %>.
+          </p>
         </div>
       </div>
 
@@ -92,7 +82,7 @@
 
 <!-- Events Section with Photo Carousels -->
 <div class="section-container">
-  <h2 class="page-title">Events</h2>
+  <h2 class="page-title">Events and Activities</h2>
 
   <% @events.each_with_index do |event, index| %>
     <div class="event-gallery-section mb-16">

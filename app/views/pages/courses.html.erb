@@ -1,92 +1,93 @@
-<div class="section-container" data-controller="course-sort">
-  <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
-    <h1 class="page-title mb-4 md:mb-0">Courses</h1>
+<div class="section-container">
+  <h1 class="page-title mb-8">Courses</h1>
 
-    <!-- Sort Dropdown -->
-    <div class="sort-control">
-      <label for="course-sort" class="sr-only">Sort courses by</label>
-      <div class="relative inline-flex items-center gap-2">
-        <i class="fas fa-sort text-lg" style="color: #9ca3af;"></i>
-        <select
-          id="course-sort"
-          data-action="change->course-sort#sort"
-          class="sort-dropdown">
-          <option value="newest">By Time (Newest First)</option>
-          <option value="oldest">By Time (Oldest First)</option>
-          <option value="hpc">By HPC Relevance</option>
-        </select>
-      </div>
-    </div>
+  <br>
+
+  <div class="container p-3 mb-4">
+    <h4 class="text-center" style="color: #e5e7eb;">Spring 2025</h4>
+
+    <table class="table table-striped" style="color: #e5e7eb !important; background-color: #1f2937 !important; font-family: 'Segoe UI', Arial, sans-serif !important; font-size: 1rem !important;">
+      <thead style="border-color: #9ca3af !important; background-color: #111827 !important;">
+        <tr>
+          <th scope="col" style="color: #9ca3af !important; border-color: #9ca3af !important; background-color: #111827 !important;">Course</th>
+          <th scope="col" style="border-color: #9ca3af !important; background-color: #111827 !important;"></th>
+          <th scope="col" style="color: #9ca3af !important; border-color: #9ca3af !important; background-color: #111827 !important;">Credits</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-color: #9ca3af !important; background-color: #374151 !important;">
+          <th scope="row" style="color: #9ca3af !important; border-color: #9ca3af !important; background-color: #374151 !important;">CS 401</th>
+          <td style="border-color: #9ca3af !important; background-color: #374151 !important; color: #e5e7eb !important;">Advanced Algorithms</td>
+          <td style="border-color: #9ca3af !important; background-color: #374151 !important; color: #e5e7eb !important;">3</td>
+        </tr>
+        <tr style="border-color: #9ca3af !important; background-color: #1f2937 !important;">
+          <th scope="row" style="color: #9ca3af !important; border-color: #9ca3af !important; background-color: #1f2937 !important;">CS 402</th>
+          <td style="border-color: #9ca3af !important; background-color: #1f2937 !important; color: #e5e7eb !important;">Database Systems</td>
+          <td style="border-color: #9ca3af !important; background-color: #1f2937 !important; color: #e5e7eb !important;">3</td>
+        </tr>
+        <tr style="border-color: #9ca3af !important; background-color: #374151 !important;">
+          <th scope="row" style="color: #9ca3af !important; border-color: #9ca3af !important; background-color: #374151 !important;">CS 403</th>
+          <td style="border-color: #9ca3af !important; background-color: #374151 !important; color: #e5e7eb !important;">Software Engineering</td>
+          <td style="border-color: #9ca3af !important; background-color: #374151 !important; color: #e5e7eb !important;">3</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <div class="max-w-4xl mx-auto">
-    <p class="text-lg mb-8" style="color: #9ca3af;">
-      A selection of relevant coursework focused on computer science, high performance computing,
-      and software engineering.
-    </p>
+  <div class="container p-3 mb-4">
+    <h4 class="text-center" style="color: #e5e7eb;">Fall 2024</h4>
 
-    <div class="space-y-6" data-course-sort-target="container">
-      <% @courses.each do |course| %>
-        <div
-          class="card hover:shadow-lg transition-all duration-200"
-          data-course-sort-target="course"
-          data-date="<%= course[:date].iso8601 %>"
-          data-hpc-relevance="<%= course[:hpc_relevance] %>">
+    <table class="table table-striped" style="color: #e5e7eb !important; background-color: #1f2937 !important; font-family: 'Segoe UI', Arial, sans-serif !important; font-size: 1rem !important;">
+      <thead style="border-color: #9ca3af !important; background-color: #111827 !important;">
+        <tr>
+          <th scope="col" style="color: #9ca3af !important; border-color: #9ca3af !important; background-color: #111827 !important;">Course</th>
+          <th scope="col" style="border-color: #9ca3af !important; background-color: #111827 !important;"></th>
+          <th scope="col" style="color: #9ca3af !important; border-color: #9ca3af !important; background-color: #111827 !important;">Credits</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-color: #9ca3af !important; background-color: #374151 !important;">
+          <th scope="row" style="color: #9ca3af !important; border-color: #9ca3af !important; background-color: #374151 !important;">CS 301</th>
+          <td style="border-color: #9ca3af !important; background-color: #374151 !important; color: #e5e7eb !important;">Data Structures</td>
+          <td style="border-color: #9ca3af !important; background-color: #374151 !important; color: #e5e7eb !important;">3</td>
+        </tr>
+        <tr style="border-color: #9ca3af !important; background-color: #1f2937 !important;">
+          <th scope="row" style="color: #9ca3af !important; border-color: #9ca3af !important; background-color: #1f2937 !important;">CS 302</th>
+          <td style="border-color: #9ca3af !important; background-color: #1f2937 !important; color: #e5e7eb !important;">Operating Systems</td>
+          <td style="border-color: #9ca3af !important; background-color: #1f2937 !important; color: #e5e7eb !important;">3</td>
+        </tr>
+        <tr style="border-color: #9ca3af !important; background-color: #374151 !important;">
+          <th scope="row" style="color: #9ca3af !important; border-color: #9ca3af !important; background-color: #374151 !important;">CS 303</th>
+          <td style="border-color: #9ca3af !important; background-color: #374151 !important; color: #e5e7eb !important;">Computer Networks</td>
+          <td style="border-color: #9ca3af !important; background-color: #374151 !important; color: #e5e7eb !important;">3</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-            <div class="flex-1">
-              <div class="flex items-center gap-3 flex-wrap">
-                <h2 class="text-2xl font-bold">
-                  <span style="color: #9ca3af;"><%= course[:code] %></span>
-                  <span style="color: #e5e7eb;">- <%= course[:name] %></span>
-                </h2>
+  <div class="container p-3">
+    <h4 class="text-center" style="color: #e5e7eb;">Summer 2024</h4>
 
-                <!-- HPC Relevance Badge -->
-                <% if course[:hpc_relevance] && course[:hpc_relevance] >= 7 %>
-                  <span class="hpc-badge">
-                    <i class="fas fa-microchip mr-1"></i>
-                    HPC Focus
-                  </span>
-                <% end %>
-              </div>
-              <p class="mt-1" style="color: #9ca3af;"><%= course[:semester] %></p>
-            </div>
-          </div>
-
-          <!-- Description -->
-          <% if course[:description] %>
-            <p class="mb-4 leading-relaxed" style="color: #9ca3af;">
-              <%= course[:description] %>
-            </p>
-          <% end %>
-
-          <!-- Topics -->
-          <% if course[:topics].present? %>
-            <div class="mt-4">
-              <h3 class="font-semibold mb-2 flex items-center" style="color: #e5e7eb;">
-                <i class="fas fa-tags mr-2 text-sm" style="color: #9ca3af;"></i>
-                Key Topics:
-              </h3>
-              <div class="flex flex-wrap gap-2">
-                <% course[:topics].each do |topic| %>
-                  <span class="topic-tag">
-                    <%= topic %>
-                  </span>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-
-          <!-- HPC Relevance Indicator -->
-          <div class="mt-4 flex items-center gap-2">
-            <span class="text-xs font-medium" style="color: #9ca3af;">HPC Relevance:</span>
-            <div class="hpc-relevance-bar">
-              <div class="hpc-relevance-fill" style="width: <%= course[:hpc_relevance] * 10 %>%"></div>
-            </div>
-            <span class="text-xs font-medium" style="color: #9ca3af;"><%= course[:hpc_relevance] %>/10</span>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <table class="table table-striped" style="color: #e5e7eb !important; background-color: #1f2937 !important; font-family: 'Segoe UI', Arial, sans-serif !important; font-size: 1rem !important;">
+      <thead style="border-color: #9ca3af !important; background-color: #111827 !important;">
+        <tr>
+          <th scope="col" style="color: #9ca3af !important; border-color: #9ca3af !important; background-color: #111827 !important;">Course</th>
+          <th scope="col" style="border-color: #9ca3af !important; background-color: #111827 !important;"></th>
+          <th scope="col" style="color: #9ca3af !important; border-color: #9ca3af !important; background-color: #111827 !important;">Credits</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-color: #9ca3af !important; background-color: #374151 !important;">
+          <th scope="row" style="color: #9ca3af !important; border-color: #9ca3af !important; background-color: #374151 !important;">CS 201</th>
+          <td style="border-color: #9ca3af !important; background-color: #374151 !important; color: #e5e7eb !important;">Introduction to Programming</td>
+          <td style="border-color: #9ca3af !important; background-color: #374151 !important; color: #e5e7eb !important;">3</td>
+        </tr>
+        <tr style="border-color: #9ca3af !important; background-color: #1f2937 !important;">
+          <th scope="row" style="color: #9ca3af !important; border-color: #9ca3af !important; background-color: #1f2937 !important;">CS 202</th>
+          <td style="border-color: #9ca3af !important; background-color: #1f2937 !important; color: #e5e7eb !important;">Discrete Mathematics</td>
+          <td style="border-color: #9ca3af !important; background-color: #1f2937 !important; color: #e5e7eb !important;">3</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
