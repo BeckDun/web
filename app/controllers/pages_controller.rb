@@ -3,20 +3,21 @@ class PagesController < ApplicationController
     # Carousel images for left side
     @carousel_images = [
       {
-        url: "/images/photo1.jpg",
-        alt: "Beckett at HPC Lab",
-        caption: "Working on parallel computing research"
+        url: "/images/personal1.png",
+        alt: "",
+        caption: ""
       },
       {
-        url: "/images/photo2.jpg",
-        alt: "Beckett at SC Conference",
-        caption: "Presenting at SC25"
+        url: "/images/personal2.png",
+        alt: "",
+        caption: ""
       },
       {
-        url: "/images/photo3.jpg",
-        alt: "Beckett with team",
-        caption: "Team collaboration"
+        url: "/images/personal3.png",
+        alt: "",
+        caption: ""
       }
+      
     ]
 
     @student_intro = {
@@ -58,15 +59,13 @@ class PagesController < ApplicationController
         location: "St. Louis, MO",
         description: "Indy-SCC cluster competition",
         url: "https://sc25.supercomputing.org/2025/10/from-spark-to-flame-introducing-the-indyscc25-teams/",
-        photos: []
-        # TODO: Add SC25 photos later
-        # photos: [
-        #   { url: "/images/sc25_photo1.jpg", alt: "SC25 Competition Photo 1" },
-        #   { url: "/images/sc25_photo2.jpg", alt: "SC25 Competition Photo 2" },
-        #   { url: "/images/sc25_photo3.jpg", alt: "SC25 Competition Photo 3" },
-        #   { url: "/images/sc25_photo4.jpg", alt: "SC25 Competition Photo 4" },
-        #   { url: "/images/sc25_photo5.jpg", alt: "SC25 Competition Photo 5" }
-        # ]
+        photos: [
+          { url: "/images/sc25_1.JPG", alt: "SC25 Competition Photo 1" },
+          { url: "/images/sc25_2.png", alt: "SC25 Competition Photo 2" },
+          { url: "/images/sc25_3.jpg", alt: "SC25 Competition Photo 3" },
+          { url: "/images/sc25_4.JPG", alt: "SC25 Competition Photo 4" },
+          { url: "/images/sc25_5.JPEG", alt: "SC25 Competition Photo 5" }
+        ]
       }    
     ]
   end
