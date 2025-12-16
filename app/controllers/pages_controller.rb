@@ -31,7 +31,7 @@ class PagesController < ApplicationController
     @social_links = [
       {
         platform: "Email",
-        url: "mailto:beckett.dunlavy@gmail.com",
+        url: "mailto:mail@beckettdunlavy.com",
         icon: "fa-envelope",
         username: "beckett.dunlavy@gmail.com"
       },
