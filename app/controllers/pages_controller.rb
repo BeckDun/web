@@ -152,16 +152,6 @@ class PagesController < ApplicationController
         honors: [],
         focus: nil,
         relevant_coursework: []
-      },
-      {
-        degree: "Google Cybersecurity Professional Certificate",
-        institution: "Coursera Online",
-        location: "Online",
-        graduation: "June 2024",
-        gpa: nil,
-        honors: [],
-        focus: "8-course cybersecurity certification program",
-        relevant_coursework: []
       }
     ]
 
