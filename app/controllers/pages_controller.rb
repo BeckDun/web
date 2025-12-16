@@ -58,13 +58,15 @@ class PagesController < ApplicationController
         location: "St. Louis, MO",
         description: "Indy-SCC cluster competition",
         url: "https://sc25.supercomputing.org/2025/10/from-spark-to-flame-introducing-the-indyscc25-teams/",
-        photos: [
-          { url: "/images/sc25_photo1.jpg", alt: "SC25 Competition Photo 1" },
-          { url: "/images/sc25_photo2.jpg", alt: "SC25 Competition Photo 2" },
-          { url: "/images/sc25_photo3.jpg", alt: "SC25 Competition Photo 3" },
-          { url: "/images/sc25_photo4.jpg", alt: "SC25 Competition Photo 4" },
-          { url: "/images/sc25_photo5.jpg", alt: "SC25 Competition Photo 5" }
-        ]
+        photos: []
+        # TODO: Add SC25 photos later
+        # photos: [
+        #   { url: "/images/sc25_photo1.jpg", alt: "SC25 Competition Photo 1" },
+        #   { url: "/images/sc25_photo2.jpg", alt: "SC25 Competition Photo 2" },
+        #   { url: "/images/sc25_photo3.jpg", alt: "SC25 Competition Photo 3" },
+        #   { url: "/images/sc25_photo4.jpg", alt: "SC25 Competition Photo 4" },
+        #   { url: "/images/sc25_photo5.jpg", alt: "SC25 Competition Photo 5" }
+        # ]
       }    
     ]
   end
