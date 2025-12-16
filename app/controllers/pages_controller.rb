@@ -3,12 +3,12 @@ class PagesController < ApplicationController
     # Carousel images for left side
     @carousel_images = [
       {
-        url: "/images/personal1.png",
+        url: "/images/personal1.jpg",
         alt: "",
         caption: ""
       },
       {
-        url: "/images/personal2.png",
+        url: "/images/personal2.jpg",
         alt: "",
         caption: ""
       },
