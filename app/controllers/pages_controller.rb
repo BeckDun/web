@@ -241,6 +241,12 @@ class PagesController < ApplicationController
     ]
   end
 
+  def meet
+    # Meeting/calendar page data
+    @bookings_url = "https://outlook.office.com/bookwithme/user/7bb42e3f5bfa449e8094d9208d68bfaf@unm.edu/meetingtype/rgieGmhZa0-UAKWry1YL7Q2?anonymous&ismsaljsauthenabled&ep=mlink"
+    @calendar_url = "https://outlook.office365.com/owa/calendar/7bb42e3f5bfa449e8094d9208d68bfaf@unm.edu/b6e7c3d7619b4d46945eb19f464c7aba13433832270352605996/calendar.html"
+  end
+
   private
 
   def calculate_hpc_relevance(topics)
