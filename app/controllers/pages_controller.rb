@@ -7,6 +7,8 @@ class PagesController < ApplicationController
         alt: "",
         caption: ""
       },
+      
+          { url: "/images/sc25_1.JPG", alt: "SC25 Competition  1" },
       {
         url: "/images/personal2.jpg",
         alt: "",
