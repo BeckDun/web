@@ -1,39 +1,25 @@
-name: Deploy to Ubuntu
+name: Deploy
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: self-hosted
-    env:
-      RAILS_ENV: production
-      RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
-      
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Gems
-        run: |
-          bundle config set --local deployment 'true'
-          bundle config set --local without 'development test'
-          bundle install --jobs 4 --retry 3
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
-      - name: Database Migrations
-        run: bundle exec rails db:migrate
-
-      - name: Precompile Assets
-        run: bundle exec rails assets:precompile
-
-      - name: Restart Server
-        run: |
-          # Check for PID file to see if server is running
-          if [ -f tmp/pids/server.pid ]; then
-            echo "Server is running. Attempting Phased Restart (Zero Downtime)..."
-            bundle exec pumactl -P tmp/pids/server.pid phased-restart
-          else
-            echo "Server is stopped. Starting via Systemd..."
-            sudo systemctl start beckett-rails
-          fi
+      - name: Build and publish
+        run: bash scripts/deploy.sh

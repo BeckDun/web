@@ -1,24 +1,22 @@
-# README
+# beckettdunlavy.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Personal portfolio site — Vite + React + TypeScript + Tailwind.
 
-Things you may want to cover:
+## Development
 
-* Ruby version
+```bash
+npm install
+npm run dev
+```
 
-* System dependencies
+## Build
 
-* Configuration
+```bash
+npm run build   # type-checks and outputs static files to dist/
+```
 
-* Database creation
+## Deploy
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Merges to `main` trigger `.github/workflows/deploy.yml`, which builds the
+site on the self-hosted runner and publishes `dist/` to the web root via
+`scripts/deploy.sh`.
