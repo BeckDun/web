@@ -306,10 +306,20 @@ export type Project = {
   description: string;
   technologies: string[];
   githubUrl?: string;
+  /** internal route for projects with their own page */
+  link?: string;
   date: string;
 };
 
 export const projects: Project[] = [
+  {
+    title: "SCC Connect",
+    description:
+      "Talks and resources for the Student Cluster Competition community — presented as in-browser slide shows.",
+    technologies: ["HPC", "Outreach"],
+    link: "/projects/scc-connect",
+    date: "2026",
+  },
   {
     title: "Hybrid CPU-GPU approach to PCG-AMG",
     description:
@@ -319,6 +329,67 @@ export const projects: Project[] = [
     date: "2025",
   },
 ];
+
+export type Slide = {
+  /** small mono label above the title */
+  eyebrow?: string;
+  title: string;
+  body?: string;
+  bullets?: string[];
+  image?: { url: string; alt: string };
+};
+
+export type SlideDeck = {
+  id: string;
+  title: string;
+  date: string;
+  description: string;
+  slides: Slide[];
+};
+
+export const sccConnect = {
+  intro:
+    "SCC Connect brings the Student Cluster Competition community together — connecting teams, sharing what we learned competing at IndySCC, and helping new teams get started with high performance computing. More details coming soon.",
+  decks: [
+    {
+      id: "demo",
+      title: "Demo Deck",
+      date: "July 2026",
+      description: "A test slide show to preview the in-browser format.",
+      slides: [
+        {
+          eyebrow: "SCC Connect",
+          title: "Demo Deck",
+          body: "A quick tour of the slide format — arrow keys or the buttons below to navigate.",
+        },
+        {
+          eyebrow: "01 · About",
+          title: "What is SCC Connect?",
+          bullets: [
+            "Connecting Student Cluster Competition teams and mentors",
+            "Sharing lessons learned from IndySCC 25",
+            "Helping new teams get started with HPC",
+          ],
+        },
+        {
+          eyebrow: "02 · Format",
+          title: "Slides live in the browser",
+          body: "Each deck is written in TypeScript and rendered in the same style as the rest of the site — no PDFs, no external embeds, light and dark mode included.",
+        },
+        {
+          eyebrow: "03 · Media",
+          title: "Slides can hold photos too",
+          image: { url: "/images/sc25_1.JPG", alt: "IndySCC 25 team photo" },
+        },
+        {
+          eyebrow: "Fin",
+          title: "Thanks!",
+          body: "Feedback welcome — this is a demo deck, real content coming soon.",
+        },
+      ],
+    },
+  ] satisfies SlideDeck[],
+};
 
 export const meet = {
   bookingsUrl:

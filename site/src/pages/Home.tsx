@@ -72,7 +72,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="gradient-name font-serif text-5xl leading-[1.05] sm:text-7xl">
+            <h1 className="font-serif text-5xl leading-[1.05] text-cloud sm:text-7xl">
               Beckett
               <br />
               Dunlavy
@@ -123,14 +123,33 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.96, rotate: 1.5 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative justify-self-center"
+            className="w-full max-w-sm justify-self-center"
           >
-            <div className="absolute -inset-3 rotate-2 rounded-3xl border border-line bg-paper/50" />
-            <img
-              src={profile.photo}
-              alt="Beckett Dunlavy"
-              className="relative max-h-[420px] w-full rounded-2xl object-cover shadow-xl shadow-black/10"
-            />
+            <div className="relative">
+              <div className="absolute -inset-3 rotate-2 rounded-3xl border border-line bg-paper/50" />
+              <img
+                src={profile.photo}
+                alt="Beckett Dunlavy"
+                className="relative max-h-[420px] w-full rounded-2xl object-cover shadow-xl shadow-black/10"
+              />
+            </div>
+
+            <Link
+              to="/projects/scc-connect"
+              className="group mt-8 flex items-center justify-between gap-3 rounded-2xl border border-line bg-paper px-4 py-3 transition-colors hover:border-accent"
+            >
+              <span className="truncate text-sm font-medium text-cloud">
+                SCC Connect
+              </span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                className="h-4 w-4 flex-none text-fog transition-all group-hover:translate-x-0.5 group-hover:text-accent"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14m0 0l-7-7m7 7l-7 7" />
+              </svg>
+            </Link>
           </motion.div>
         </section>
       </div>

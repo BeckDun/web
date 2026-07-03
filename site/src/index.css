@@ -103,60 +103,8 @@ body {
   opacity: 0.08;
 }
 
-/* Slow color sheen across the display name */
-.gradient-name {
-  background: linear-gradient(
-    100deg,
-    var(--fg) 0%,
-    var(--fg) 30%,
-    var(--accent) 46%,
-    var(--sage) 58%,
-    var(--fg) 74%,
-    var(--fg) 100%
-  );
-  background-size: 250% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: sheen 9s ease-in-out infinite;
-}
-
-@keyframes sheen {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-/* ---- Micro-motion --------------------------------------------------- */
-
-/* ---- Orbiting skills ------------------------------------------------ */
-
-@keyframes orbit-spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.orbit-ring {
-  animation: orbit-spin var(--spin, 90s) linear infinite;
-  animation-direction: var(--spin-dir, normal);
-}
-
-/* counter-rotation keeps the logos upright while the ring turns */
-.orbit-counter {
-  animation: orbit-spin var(--spin, 90s) linear infinite;
-  animation-direction: var(--spin-counter-dir, reverse);
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .blob,
-  .gradient-name,
-  .orbit-ring,
-  .orbit-counter {
+  .blob {
     animation: none;
   }
 }

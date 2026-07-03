@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Meet from "./pages/Meet";
 import Classes from "./pages/Classes";
 import Projects from "./pages/Projects";
+import SccConnect from "./pages/SccConnect";
+import SlideShow from "./pages/SlideShow";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -27,6 +29,8 @@ export default function App() {
             <Route path="/meet" element={<Meet />} />
             <Route path="/classes" element={<Classes />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/scc-connect" element={<SccConnect />} />
+            <Route path="/projects/scc-connect/:deckId" element={<SlideShow />} />
           </Routes>
         </main>
         <Footer />

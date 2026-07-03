@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { projects } from "../data";
 import BrandIcon from "../components/BrandIcon";
 
@@ -43,6 +44,17 @@ export default function Projects() {
               ))}
             </div>
 
+            {project.link && (
+              <Link
+                to={project.link}
+                className="mt-5 inline-flex items-center gap-2 text-sm text-cloud underline-offset-4 hover:underline"
+              >
+                View project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-4 w-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14m0 0l-7-7m7 7l-7 7" />
+                </svg>
+              </Link>
+            )}
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
