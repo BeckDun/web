@@ -133,7 +133,7 @@ export default function Home() {
             </div>
 
             <Link
-              to="/scc-connect"
+              to="/sc26"
               className="group mt-8 flex items-center justify-between gap-3 rounded-2xl border border-line bg-paper px-4 py-3 transition-colors hover:border-accent"
             >
               <span className="truncate text-sm font-medium text-cloud">

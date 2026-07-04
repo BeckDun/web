@@ -5,10 +5,8 @@ import ThemeToggle from "./ThemeToggle";
 const links = [
   { to: "/", label: "Home" },
   { to: "/sc26", label: "SC26" },
-  { to: "/scc-connect", label: "SCC Connect" },
   { to: "/meet", label: "Meet" },
   { to: "/classes", label: "Classes" },
-  { to: "/projects", label: "Projects" },
 ];
 
 function navClass({ isActive }: { isActive: boolean }) {

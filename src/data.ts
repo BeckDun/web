@@ -349,10 +349,9 @@ export type Sc26TimelineItem = {
 export const sc26 = {
   logo: "/images/sc26/SC26-01.png",
   title: "Team UNM · SC26",
-  subtitle: "HPC Student Cluster Competition",
+  subtitle: "SCC Connect",
   meta: "Chicago, IL · June – November 2026",
-  overviewUrl:
-    "https://sc26.supercomputing.org/students/student-cluster-competition/",
+  overviewUrl: "https://sc26.supercomputing.org/students/scc-connect/",
   timeline: [
     { date: "May 15", labels: ["Application Deadline"], done: true },
     {
