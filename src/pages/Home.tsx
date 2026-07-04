@@ -79,16 +79,14 @@ export default function Home() {
             </h1>
 
             <p className="mt-6 max-w-md text-lg leading-relaxed text-fog">
-              {profile.title} at the {profile.university}, focused on{" "}
-              <span className="text-cloud">High Performance Computing</span>{" "}
-              and parallel architectures.
+              SWE Intern @ Tesla
+              <br />
+              High Performance Computing
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
-              <a
-                href={profile.resumePdf}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/resume"
                 className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-on-accent transition-transform hover:scale-[1.03] active:scale-[0.98]"
               >
                 View my resume
@@ -105,7 +103,7 @@ export default function Home() {
                     d="M7 17L17 7M17 7H8M17 7v9"
                   />
                 </svg>
-              </a>
+              </Link>
               <Link
                 to="/meet"
                 className="rounded-full border border-line bg-paper/60 px-6 py-2.5 text-sm text-cloud backdrop-blur transition-colors hover:border-sage hover:text-sage"

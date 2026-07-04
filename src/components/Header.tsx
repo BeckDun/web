@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { profile } from "../data";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
@@ -32,14 +31,12 @@ export default function Header() {
               {l.label}
             </NavLink>
           ))}
-          <a
-            href={profile.resumePdf}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/resume"
             className="rounded-full border border-line px-4 py-1.5 text-sm text-cloud transition-colors hover:border-accent hover:text-accent"
           >
             Resume
-          </a>
+          </Link>
           <ThemeToggle />
         </div>
 
@@ -76,14 +73,13 @@ export default function Header() {
                 {l.label}
               </NavLink>
             ))}
-            <a
-              href={profile.resumePdf}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/resume"
               className="text-sm text-fog hover:text-cloud"
+              onClick={() => setOpen(false)}
             >
               Resume
-            </a>
+            </Link>
           </div>
         </div>
       )}
