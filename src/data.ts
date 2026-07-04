@@ -1,10 +1,8 @@
 export const profile = {
   name: "Beckett Dunlavy",
-  title: "Computer Science Student",
+  title: "SWE Intern @ Tesla",
   university: "University of New Mexico",
-  intro: "I'm an incoming SWE Intern at Tesla.",
-  bio: "Passionate about High Performance Computing and leveraging parallel computing architectures to solve complex computational problems.",
-  tagline: "Building the future of computational science",
+  bio: "High Performance Computing",
   resumePdf: "/resume.pdf",
   photo: "/images/personal3.png",
 };
@@ -44,15 +42,29 @@ export type Job = {
 
 export const experience: Job[] = [
   {
-    title: "Incoming Software Engineering Intern",
+    title: "Software Engineering Intern",
     organization: "Tesla",
     logoSlug: "tesla",
     logoUrl: "https://www.tesla.com",
-    location: "Austin, TX",
-    startDate: "Summer 2026",
+    location: "Palo Alto, CA",
+    startDate: "May 2026",
     endDate: "",
+    current: true,
+    responsibilities: ["HPC Infrastructure for Tesla Autopilot", "Kubernetes"],
+  },
+  {
+    title: "HPC System and User Support",
+    organization: "Center for Advanced Research Computing (CARC) at UNM",
+    logo: "/images/unm_logo.png",
+    logoUrl: "https://carc.unm.edu",
+    location: "Albuquerque, NM",
+    startDate: "January 2026",
+    endDate: "May 2026",
     current: false,
-    responsibilities: [],
+    responsibilities: [
+      "Support HPC research and development",
+      "System support on clusters",
+    ],
   },
   {
     title: "Research Assistant",
@@ -61,8 +73,8 @@ export const experience: Job[] = [
     logoUrl: "https://www.unm.edu",
     location: "Albuquerque, NM",
     startDate: "May 2025",
-    endDate: "Present",
-    current: true,
+    endDate: "May 2026",
+    current: false,
     responsibilities: [
       "Benchmarked the Hypre algebraic multigrid (AMG) linear solver on the DeltaAI HPC cluster at UIUC",
       "Extended existing C++ software to optimally leverage CPU and NVIDIA GH200 GPUs in AMG linear solvers",
@@ -79,7 +91,6 @@ export const experience: Job[] = [
     current: false,
     responsibilities: [
       "Created a curriculum to teach Git/GitLab to incoming and enrolled CS students",
-      "Produced educational YouTube videos teaching the curriculum",
       "Tutored undergraduate computer science students in a variety of classes",
     ],
   },
@@ -94,8 +105,7 @@ export const experience: Job[] = [
     current: false,
     responsibilities: [
       "Assisted in teaching duties for Intermediate Programming (CS 251) section with 18 students",
-      "Led weekly lab sessions, helped students with content understanding, graded homework",
-      "Hosted weekly office hours, helping students 1-on-1 with homework and programming assignments",
+      "Led weekly lab sessions, helped students with content understanding, graded homework"
     ],
   },
 ];

@@ -91,7 +91,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-on-accent transition-transform hover:scale-[1.03] active:scale-[0.98]"
               >
-                View my résumé
+                View my resume
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
