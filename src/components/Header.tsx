@@ -38,7 +38,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="rounded-full border border-line px-4 py-1.5 text-sm text-cloud transition-colors hover:border-accent hover:text-accent"
           >
-            Résumé
+            Resume
           </a>
           <ThemeToggle />
         </div>
@@ -82,7 +82,7 @@ export default function Header() {
               rel="noopener noreferrer"
               className="text-sm text-fog hover:text-cloud"
             >
-              Résumé
+              Resume
             </a>
           </div>
         </div>
