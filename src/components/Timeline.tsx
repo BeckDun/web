@@ -30,6 +30,7 @@ export default function Timeline() {
               <img
                 src={job.logo}
                 alt={`${job.organization} logo`}
+                loading="lazy"
                 className="h-9 w-9 object-contain"
               />
             ) : job.logoSlug ? (

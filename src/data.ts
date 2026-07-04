@@ -4,7 +4,7 @@ export const profile = {
   university: "University of New Mexico",
   bio: "High Performance Computing",
   resumePdf: "/Beckett_Dunlavy_Resume.pdf",
-  photo: "/images/personal3.png",
+  photo: "/images/personal3.jpg",
 };
 
 export const socialLinks = [
@@ -182,7 +182,7 @@ export const events: Event[] = [
     url: "https://sc25.supercomputing.org/2025/10/from-spark-to-flame-introducing-the-indyscc25-teams/",
     photos: [
       { url: "/images/sc25_1.JPG", alt: "SC25 Competition Photo 1" },
-      { url: "/images/sc25_2.png", alt: "SC25 Competition Photo 2" },
+      { url: "/images/sc25_2.jpg", alt: "SC25 Competition Photo 2" },
       { url: "/images/sc25_3.jpg", alt: "SC25 Competition Photo 3" },
       { url: "/images/sc25_4.JPG", alt: "SC25 Competition Photo 4" },
       { url: "/images/sc25_5.JPEG", alt: "SC25 Competition Photo 5" },
@@ -323,14 +323,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "SCC Connect",
-    description:
-      "Talks and resources for the Student Cluster Competition community — presented as in-browser slide shows.",
-    technologies: ["HPC", "Outreach"],
-    link: "/projects/scc-connect",
-    date: "2026",
-  },
-  {
     title: "Hybrid CPU-GPU approach to PCG-AMG",
     description:
       "This project investigates a hybrid CPU-GPU execution strategy for PCG-AMG within hypre.",
@@ -339,6 +331,104 @@ export const projects: Project[] = [
     date: "2025",
   },
 ];
+
+export type Sc26Member = {
+  name: string;
+  role: string;
+  bio?: string;
+  photo: string;
+  url?: string;
+};
+
+export type Sc26TimelineItem = {
+  date: string;
+  labels: string[];
+  done?: boolean;
+};
+
+export const sc26 = {
+  logo: "/images/sc26/SC26-01.png",
+  title: "Team UNM · SC26",
+  subtitle: "HPC Student Cluster Competition",
+  meta: "Chicago, IL · June – November 2026",
+  overviewUrl:
+    "https://sc26.supercomputing.org/students/student-cluster-competition/",
+  timeline: [
+    { date: "May 15", labels: ["Application Deadline"], done: true },
+    {
+      date: "Jun 19",
+      labels: ["SC26 Teams Announced", "Cluster stand-up at UNM"],
+      done: true,
+    },
+    { date: "Nov 6", labels: ["Ship Cluster to Chicago"] },
+    { date: "Nov 14", labels: ["Cluster Setup in Chicago"] },
+    { date: "Nov 16–18", labels: ["Competition"] },
+  ] as Sc26TimelineItem[],
+  manager: [
+    {
+      name: "Beckett Dunlavy",
+      role: "Team Manager",
+      bio: "Senior - Computer Science, incoming Software Engineer Intern at Tesla (ML & HPC Infra). Competed in indy-SC25 last year.",
+      photo: "/images/sc26/SC26-beckett-dunlavy-headshot.jpeg",
+      url: "https://www.linkedin.com/in/beckettd/",
+    },
+  ] as Sc26Member[],
+  team: [
+    {
+      name: "Kiana Tarter",
+      role: "Team Member",
+      photo: "/images/sc26/SC26-kianara-tarter.JPG",
+      url: "https://www.linkedin.com/in/kiana-m-t/",
+    },
+    {
+      name: "Ethan Hoover",
+      role: "Team Member",
+      photo: "/images/sc26/SC26-ethan-hoover-headshot.jpg",
+      url: "https://www.linkedin.com/in/ethanhoover15/",
+    },
+    {
+      name: "Nevaeh Martinez",
+      role: "Team Member",
+      photo: "/images/sc26/SC26-nevaeh-martinez-headshot.jpg",
+      url: "https://www.linkedin.com/in/nevaeh-martinez-4400b9380/",
+    },
+    {
+      name: "Amber Smith",
+      role: "Team Member",
+      photo: "/images/sc26/SC26-amber-smith-headshot.jpg",
+      url: "https://www.linkedin.com/in/amber-smith-51875838b/",
+    },
+    {
+      name: "Abdullah Ismail",
+      role: "Team Member",
+      photo: "/images/sc26/SC26-abdullah-ismail-headshot.jpeg",
+      url: "https://www.linkedin.com/in/abdullah-ismail-7046342ab/",
+    },
+  ] as Sc26Member[],
+  coaches: [
+    {
+      name: "Ryan Scherbarth",
+      role: "Coach",
+      bio: "Sr. Software Engineer at Tesla (ML & HPC Infra). Led UNM's team at SC23 and SC24, and multiple other HPC competitions.",
+      photo: "/images/sc26/Profile-05.jpg",
+      url: "https://ryanscherbarth.com",
+    },
+    {
+      name: "Alex Knigge",
+      role: "Coach",
+      bio: "Software Engineer at Sandia National Laboratories (HPC monitoring & perf). Led UNM's team at SC25 and multiple other HPC competitions.",
+      photo: "/images/sc26/SC26-alex-knigge-headshot.jpg",
+      url: "https://www.linkedin.com/in/alex-knigge/",
+    },
+    {
+      name: "Dr. Matthew Fricke",
+      role: "Faculty Advisor",
+      bio: "Research Associate Professor at the University of New Mexico, and faculty sponsor of UNM's HPC team since it's founding in 2023.",
+      photo: "/images/sc26/SC26-matthew-fricke-headshot.jpeg",
+      url: "https://fricke.uk/",
+    },
+  ] as Sc26Member[],
+};
 
 export type Slide = {
   /** small mono label above the title */

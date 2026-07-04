@@ -88,7 +88,7 @@ export default function SlideShow() {
       <section className="mx-auto max-w-3xl px-6 py-20 text-center">
         <p className="text-fog">Slide show not found.</p>
         <Link
-          to="/projects/scc-connect"
+          to="/scc-connect"
           className="mt-4 inline-block text-cloud underline underline-offset-4"
         >
           Back to SCC Connect
@@ -102,7 +102,7 @@ export default function SlideShow() {
       <div className="mb-6 flex flex-wrap items-baseline justify-between gap-3">
         <div>
           <Link
-            to="/projects/scc-connect"
+            to="/scc-connect"
             className="mb-2 inline-flex items-center gap-2 font-mono text-xs text-fog transition-colors hover:text-cloud"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-3.5 w-3.5">

@@ -7,6 +7,7 @@ import Resume from "./pages/Resume";
 import Meet from "./pages/Meet";
 import Classes from "./pages/Classes";
 import Projects from "./pages/Projects";
+import Sc26 from "./pages/Sc26";
 import SccConnect from "./pages/SccConnect";
 import SlideShow from "./pages/SlideShow";
 
@@ -31,8 +32,9 @@ export default function App() {
             <Route path="/meet" element={<Meet />} />
             <Route path="/classes" element={<Classes />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/scc-connect" element={<SccConnect />} />
-            <Route path="/projects/scc-connect/:deckId" element={<SlideShow />} />
+            <Route path="/sc26" element={<Sc26 />} />
+            <Route path="/scc-connect" element={<SccConnect />} />
+            <Route path="/scc-connect/:deckId" element={<SlideShow />} />
           </Routes>
         </main>
         <Footer />

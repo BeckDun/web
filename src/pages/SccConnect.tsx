@@ -5,19 +5,6 @@ import { sccConnect } from "../data";
 export default function SccConnect() {
   return (
     <section className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
-      <Link
-        to="/projects"
-        className="mb-8 inline-flex items-center gap-2 font-mono text-xs text-fog transition-colors hover:text-cloud"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-3.5 w-3.5">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 12H5m0 0l7 7m-7-7l7-7" />
-        </svg>
-        All projects
-      </Link>
-
-      <p className="mb-3 font-mono text-xs uppercase tracking-[0.3em] text-accent">
-        Project
-      </p>
       <h1 className="font-serif text-4xl text-cloud sm:text-5xl">SCC Connect</h1>
       <p className="mt-4 leading-relaxed text-fog">{sccConnect.intro}</p>
 
@@ -37,7 +24,7 @@ export default function SccConnect() {
               transition={{ duration: 0.4, delay: i * 0.05 }}
             >
               <Link
-                to={`/projects/scc-connect/${deck.id}`}
+                to={`/scc-connect/${deck.id}`}
                 className="group flex items-center justify-between gap-4 rounded-2xl border border-line bg-paper p-5 transition-colors hover:border-fog/50"
               >
                 <div className="min-w-0">

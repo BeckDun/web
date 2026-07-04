@@ -79,9 +79,9 @@ export default function Home() {
             </h1>
 
             <p className="mt-6 max-w-md text-lg leading-relaxed text-fog">
-              SWE Intern @ Tesla
+              {profile.title}
               <br />
-              High Performance Computing
+              {profile.bio}
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
@@ -133,7 +133,7 @@ export default function Home() {
             </div>
 
             <Link
-              to="/projects/scc-connect"
+              to="/scc-connect"
               className="group mt-8 flex items-center justify-between gap-3 rounded-2xl border border-line bg-paper px-4 py-3 transition-colors hover:border-accent"
             >
               <span className="truncate text-sm font-medium text-cloud">
