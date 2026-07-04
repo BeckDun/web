@@ -356,11 +356,11 @@ export const sc26 = {
     { date: "May 15", labels: ["Application Deadline"], done: true },
     {
       date: "Jun 19",
-      labels: ["SC26 Teams Announced", "Cluster stand-up at UNM"],
+      labels: ["SC26 Teams Announced"],
       done: true,
     },
-    { date: "Nov 6", labels: ["Ship Cluster to Chicago"] },
-    { date: "Nov 14", labels: ["Cluster Setup in Chicago"] },
+    { date: "Jun-Nov", labels: ["Prepare with team"] },
+    { date: "TBA", labels: ["Benchmarking"] },
     { date: "Nov 16–18", labels: ["Competition"] },
   ] as Sc26TimelineItem[],
   manager: [

@@ -108,7 +108,7 @@ export default function SlideShow() {
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="h-3.5 w-3.5">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 12H5m0 0l7 7m-7-7l7-7" />
             </svg>
-            SCC Connect
+            SC 2026 - SCC Connect - Chicago
           </Link>
           <h1 className="font-serif text-2xl text-cloud sm:text-3xl">
             {deck.title}
