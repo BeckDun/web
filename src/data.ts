@@ -3,7 +3,7 @@ export const profile = {
   title: "SWE Intern @ Tesla",
   university: "University of New Mexico",
   bio: "High Performance Computing",
-  resumePdf: "/resume.pdf",
+  resumePdf: "/Beckett_Dunlavy_Resume.pdf",
   photo: "/images/personal3.png",
 };
 
