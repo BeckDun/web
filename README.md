@@ -18,5 +18,5 @@ npm run build   # type-checks and outputs static files to dist/
 ## Deploy
 
 Merges to `main` trigger `.github/workflows/deploy.yml`, which builds the
-site on the self-hosted runner and publishes `dist/` to the web root via
-`scripts/deploy.sh`.
+site on a GitHub-hosted runner and rsyncs `dist/` to the server over SSH.
+`scripts/deploy.sh` does the same thing by hand from a clone on the server.

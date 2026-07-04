@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Build the site and publish dist/ to the nginx web root.
-# Used by .github/workflows/deploy.yml on the self-hosted runner,
-# but safe to run by hand from the repo root on the droplet.
+# Manual deploy: build the site and publish dist/ to the nginx web root.
+# Run from a clone on the droplet if you ever need to deploy by hand —
+# normal deploys happen via GitHub Actions (.github/workflows/deploy.yml).
 set -euo pipefail
 
 WEB_ROOT="${WEB_ROOT:-/var/www/beckettdunlavy.com}"
@@ -15,7 +15,7 @@ echo "==> Building"
 npm run build
 
 echo "==> Publishing to ${WEB_ROOT}"
-sudo mkdir -p "$WEB_ROOT"
-sudo rsync -a --delete dist/ "$WEB_ROOT"/
+mkdir -p "$WEB_ROOT"
+rsync -a --delete dist/ "$WEB_ROOT"/
 
 echo "==> Deployed $(git rev-parse --short HEAD) to ${WEB_ROOT}"
