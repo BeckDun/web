@@ -68,7 +68,7 @@ export default function Home() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
               </span>
               <span className="font-mono text-xs text-cloud">
-                Incoming SWE Intern @ Tesla — Summer 2026
+                SWE Intern @ Tesla — Palo Alto
               </span>
             </div>
 

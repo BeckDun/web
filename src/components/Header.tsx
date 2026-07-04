@@ -11,10 +11,8 @@ const links = [
 ];
 
 function navClass({ isActive }: { isActive: boolean }) {
-  return `relative text-sm transition-colors ${
-    isActive
-      ? "text-cloud font-medium after:absolute after:-bottom-[21px] after:left-0 after:h-px after:w-full after:bg-accent"
-      : "text-fog hover:text-cloud"
+  return `text-sm transition-colors ${
+    isActive ? "text-cloud font-medium" : "text-fog hover:text-cloud"
   }`;
 }
 
