@@ -166,9 +166,9 @@ export default function Home() {
         </Section>
       </div>
 
-      {/* Events & photos */}
+      {/* Events */}
       <div className="border-t border-line">
-        <Section id="events" index="03" title="Events & Photos">
+        <Section id="events" index="03" title="Events">
           <div className="space-y-16">
             {events.map((event) => (
               <div key={event.name}>
@@ -203,14 +203,14 @@ export default function Home() {
                 <PhotoCarousel photos={event.photos} />
               </div>
             ))}
-
-            <div>
-              <h3 className="mb-6 text-xl font-semibold text-cloud">
-                Around campus & beyond
-              </h3>
-              <PhotoCarousel photos={personalPhotos} />
-            </div>
           </div>
+        </Section>
+      </div>
+
+      {/* Photos */}
+      <div className="border-t border-line">
+        <Section id="photos" index="04" title="Photos">
+          <PhotoCarousel photos={personalPhotos} />
         </Section>
       </div>
     </>

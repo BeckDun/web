@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+// Link is only used by the hidden slide-decks section below
+// import { Link } from "react-router-dom";
 import { sc26, sccConnect, type Sc26Member } from "../data";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
@@ -146,7 +147,7 @@ export default function Sc26() {
         <MemberGrid members={sc26.coaches} />
       </div>
 
-      {/* Slide shows */}
+      {/* Slide shows — hidden for now, uncomment to bring back
       <div className="mt-16">
         <SectionLabel>Slide Shows</SectionLabel>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -194,6 +195,7 @@ export default function Sc26() {
           ))}
         </div>
       </div>
+      */}
     </section>
   );
 }

@@ -194,9 +194,6 @@ export const personalPhotos = [
   { url: "/images/personal1.jpg", alt: "Beckett Dunlavy" },
   { url: "/images/personal2.jpg", alt: "Beckett Dunlavy" },
   { url: "/images/personal4.JPEG", alt: "Beckett Dunlavy" },
-  { url: "/images/photo1.jpg", alt: "Photo" },
-  { url: "/images/photo2.jpg", alt: "Photo" },
-  { url: "/images/photo3.jpg", alt: "Photo" },
 ];
 
 export type Course = {
