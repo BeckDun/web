@@ -417,7 +417,7 @@ export const sc26 = {
       role: "Coach",
       bio: "Software Engineer at Sandia National Laboratories (HPC monitoring & perf). Led UNM's team at SC25 and multiple other HPC competitions.",
       photo: "/images/sc26/SC26-alex-knigge-headshot.jpg",
-      url: "https://www.linkedin.com/in/alex-knigge/",
+      url: "https://alexknigge.com",
     },
     {
       name: "Dr. Matthew Fricke",
